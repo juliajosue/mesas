@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff1e3;
+    color: #333;
+}
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+button {
+    background-color: #cf9674;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    padding: 15px 25px;
+    font-size: .8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    width: 100%;
+    margin: .5rem 0;
+}
+button:hover {
+    background-color: #e3b79d;
+    transform: translateY(-2px);
+}
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+.buttons-home {
+    margin-top: 1rem;
+}
+input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+h1 {
+    font-size: 26px;
+    color: #333;
+}
+h2 {
+    color: #cf9674;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+#result {
+    font-size: 1rem;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+ul li {
+    font-size: 1rem;
+    margin-bottom: 1px;
+    transition: transform 0.3s ease-in-out;
+    border: 1px solid #cf9674;
+    background: #fff;
+    padding: .3rem;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.hidden {
+    display: none;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#home button,
+#discover button,
+#consult button {
+    transition: background-color 0.2s ease;
+}
+button:active {
+    transform: scale(0.98);
+}
+#nameSuggestions {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+#nameSuggestions li:hover {
+    background-color: #fff1e3;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julia & Josué</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="content">
+        <div id="home" class="container">
+            <h1>Julia & Josué</h1>
+            <h2>Consulte onde você irá se sentar</h2>
+          
+            <div class="buttons-home">
+                <button id="discover">Descubra sua mesa</button>
+                <button id="consult">Consulte sua mesa</button>
+            </div>
+        </div>
+    
+        <div id="discoverView" class="container hidden">
+            <h1>Descubra sua Mesa</h1>
+            <!-- Campo para digitar o nome -->
+            <input type="text" id="nameInput" placeholder="Digite seu nome">
+            <button id="findTable">Buscar Mesa</button>
+            <p id="result"></p>
+             <!-- Lista de sugestões -->
+            <ul id="nameSuggestions" class="hidden"></ul>
+            <button id="goHomeDiscover">Voltar para a Home</button>
+        </div>
+    
+        <div id="consultView" class="container hidden">
+            <h1>Consulte os Convidados</h1>
+            <!-- Campo para digitar o número da mesa -->
+            <input type="number" id="tableInput" placeholder="Digite o número da mesa">
+            <button id="findGuests">Buscar Convidados</button>
+            <ul id="guestList"></ul>
+            <button id="goHomeConsult">Voltar para a Home</button>
+        </div>
+    
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
