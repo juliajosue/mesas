@@ -118,24 +118,32 @@ function consultGuests() {
     const tableNumber = document.getElementById('tableInput').value.trim();
     const guestList = document.getElementById('guestList');
     
+    // Limpa o conteúdo da lista de convidados
+    guestList.innerHTML = '';
+
     // Verifica se o campo de mesa está vazio
     if (!tableNumber) {
-        guestList.innerHTML = 'Por favor, digite o número da mesa antes de buscar.';
-        guestList.style.color = '#cf9674';
-        return;  // Se o campo estiver vazio, não prossegue
+        guestList.innerHTML = '<p style="color: #cf9674;">Por favor, digite o nome ou número da mesa antes de buscar.</p>';
+        return;
     }
 
-    // Filtra os dados para encontrar os convidados da mesa fornecida
-    const guestsAtTable = dados.filter(item => item.B === tableNumber);
-    
+    // Normaliza a entrada do usuário para remover acentos
+    const normalizedTableNumber = removeAccents(tableNumber.toLowerCase());
+
+    // Filtra os dados para encontrar mesas que correspondam ao número ou nome fornecido
+    const guestsAtTable = dados.filter(item => 
+        removeAccents(item.B.toLowerCase()) === normalizedTableNumber
+    );
+
     if (guestsAtTable.length > 0) {
-        guestList.innerHTML = '';
+        // Exibe os convidados da mesa
         guestsAtTable.forEach(item => {
-            guestList.innerHTML += `<li>${item.A}</li>`;
+            const listItem = document.createElement('li');
+            listItem.textContent = item.A;
+            guestList.appendChild(listItem);
         });
     } else {
-        guestList.innerHTML = 'Nenhum convidado encontrado para essa mesa!';
-        guestList.style.color = '#cf9674';
+        guestList.innerHTML = '<p style="color: #cf9674;">Nenhum convidado encontrado para essa mesa!</p>';
     }
 }
 
